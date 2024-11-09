@@ -1,0 +1,69 @@
+module 'buzzer-notes'
+author unknown
+version 1 0 
+description ''
+variables 'whole-note-ms' 
+
+  spec ' ' 'eighth-note' 'eighth-note'
+  spec ' ' 'eigth-rest' 'eigth-rest'
+  spec ' ' 'half-note' 'half-note _ _' 'auto auto' 'c' 0
+  spec ' ' 'half-rest' 'half-rest'
+  spec ' ' 'note' 'quarter-note _ _' 'auto auto' 'c' 0
+  spec ' ' 'notes-initialized' 'notes-initialize _' 'auto' 0
+  spec ' ' 'play-note' '_note _ _ _' 'auto auto auto' 'c' 0 1
+  spec ' ' 'quarter-rest' 'quarter-rest'
+  spec ' ' 'rest' 'rest _' 'auto' 1
+  spec ' ' 'set-whole-note-ms' 'set-whole-note-ms _' 'auto' 2000
+  spec ' ' 'whole-note' 'whole-note'
+
+to 'eighth-note' {
+  'play tone' note octave (whole-note-ms / 4)
+  waitMillis (whole-note-ms / 25)
+}
+
+to 'eigth-rest' {
+  rest 8
+}
+
+to 'half-note' note octave {
+  'play tone' note octave (whole-note-ms / 2)
+  waitMillis (whole-note-ms / 25)
+}
+
+to 'half-rest' {
+  rest 2
+}
+
+to note note octave {
+  'play tone' note octave (whole-note-ms / 4)
+  waitMillis (whole-note-ms / 25)
+}
+
+to 'notes-initialized' pin {
+  'attach buzzer to pin' pin
+  'set-whole-note-ms' 2000
+}
+
+to 'play-note' note octave of-whole {
+  'play tone' note octave 500
+  waitMillis (whole-note-ms / 25)
+}
+
+to 'quarter-rest' {
+  rest 4
+}
+
+to rest of-whole {
+  waitMillis (whole-note-ms / of-whole)
+  waitMillis (whole-note-ms / 25)
+}
+
+to 'set-whole-note-ms' ms {
+  whole-note-ms = ms
+}
+
+to 'whole-note' {
+  'play tone' note octave (whole-note-ms / 1)
+  waitMillis (whole-note-ms / 25)
+}
+
