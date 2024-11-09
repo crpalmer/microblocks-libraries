@@ -6,10 +6,10 @@ variables 'whole-note-ms'
 
   spec ' ' 'notes-initialized' 'notes-initialize _' 'auto' 0
   spec ' ' 'set-whole-note-ms' 'set-whole-note-ms _' 'auto' 2000
-  spec ' ' 'note' 'quarter-note _ _' 'auto auto' 'c' 0
-  spec ' ' 'eighth-note' 'eighth-note _ _' 'auto auto' 'c' 0
-  spec ' ' 'half-note' 'half-note _ _' 'auto auto' 'c' 0
-  spec ' ' 'whole-note' 'whole-note _ _' 'auto auto' 'c' 0
+  spec ' ' 'note' 'quarter-note _ octave _' 'str num' 'c' 0
+  spec ' ' 'eighth-note' 'eighth-note _ octave _' 'str num' 'c' 0
+  spec ' ' 'half-note' 'half-note _ octave _' 'str num' 'c' 0
+  spec ' ' 'whole-note' 'whole-note _ octave _' 'str num' 'c' 0
   spec ' ' 'eigth-rest' 'eigth-rest'
   spec ' ' 'quarter-rest' 'quarter-rest'
   spec ' ' 'half-rest' 'half-rest'
